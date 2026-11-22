@@ -46,3 +46,12 @@ tasks = cursor.fetchall()
 for task in tasks:
     print(task)
 
+#Update a task in the database
+cursor.execute("""
+UPDATE tasks
+SET completed = TRUE
+WHERE id = %s
+""", (1,))
+
+connection.commit()
+
