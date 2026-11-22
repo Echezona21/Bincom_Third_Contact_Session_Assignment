@@ -55,3 +55,12 @@ WHERE id = %s
 
 connection.commit()
 
+#Delete a task from the database
+cursor.execute("""
+DELETE FROM tasks
+WHERE id = %s
+""", (2,))
+connection.commit()
+#Close the cursor and connection
+cursor.close()
+connection.close()
