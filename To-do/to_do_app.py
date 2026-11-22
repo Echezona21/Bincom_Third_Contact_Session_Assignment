@@ -1,3 +1,10 @@
+import sys
+import os
+
+sys.path.append(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
+
 from db.connect_postgres import get_connection
 connection = get_connection("todo_db")
                             

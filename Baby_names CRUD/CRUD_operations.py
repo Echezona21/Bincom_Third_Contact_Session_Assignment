@@ -1,3 +1,10 @@
+import sys
+import os
+
+sys.path.append(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
+
 from db.connect_postgres import get_connection
 connection = get_connection("baby_names_db")
 
@@ -7,7 +14,7 @@ cursor = connection.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS baby_names(
     id SERIAL PRIMARY KEY,
-    names TEXT, UNIQUE, NOT NULL,
+    name TEXT UNIQUE NOT NULL
 )
 """)
 
