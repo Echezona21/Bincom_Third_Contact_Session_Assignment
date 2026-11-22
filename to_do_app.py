@@ -15,3 +15,28 @@ CREATE TABLE IF NOT EXISTS tasks(
 connection.commit()
 
 print("Table Created Successfully")
+
+#Create a list of tasks to add to the database
+tasks = [
+    "Learn Python",
+    "Learn PostgreSQL",
+    "Build Todo App",
+    "Practice CRUD",
+    "Learn Functions",
+    "Study APIs",
+    "Learn Git",
+    "Create Portfolio",
+    "Apply for Internship",
+    "Finish Assignment"
+]
+
+for task in tasks:
+    cursor.execute(
+        "INSERT INTO tasks(task_name) VALUES(%s)",
+        (task,)
+    )
+
+connection.commit()
+
+print("10 Tasks Added Successfully")
+
