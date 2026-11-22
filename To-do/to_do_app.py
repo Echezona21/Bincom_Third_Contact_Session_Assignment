@@ -1,6 +1,6 @@
-from connect_postgres import get_connection
-connection = get_connection()
-
+from db.connect_postgres import get_connection
+connection = get_connection("todo_db")
+                            
 #Create a cursor object to interact with the database
 cursor = connection.cursor()
 #Create a table to store tasks
