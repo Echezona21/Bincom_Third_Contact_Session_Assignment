@@ -40,3 +40,9 @@ connection.commit()
 
 print("10 Tasks Added Successfully")
 
+#Read all tasks from the database
+cursor.execute("SELECT * FROM tasks")
+tasks = cursor.fetchall()
+for task in tasks:
+    print(task)
+
